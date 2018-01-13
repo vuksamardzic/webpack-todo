@@ -1,0 +1,19 @@
+{
+  "name": "webpack-todo",
+  "version": "1.0.0",
+  "description": "Simple app using webpack for development :wrench:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xemichar/webpack-todo.git"
+  },
+  "author": "Vuk Samardžić <samardzic.vuk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xemichar/webpack-todo/issues"
+  },
+  "homepage": "https://github.com/xemichar/webpack-todo#readme"
+}
