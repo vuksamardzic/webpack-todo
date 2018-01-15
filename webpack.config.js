@@ -1,5 +1,5 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: './src/js/main.js',
     output: {
@@ -15,6 +15,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
@@ -22,4 +23,10 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'webpack todo',
+            template: 'index.html'
+        })
+    ]
 };
