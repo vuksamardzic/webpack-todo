@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
     entry: './src/js/main.js',
     output: {
@@ -8,8 +9,7 @@ module.exports = {
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-        port: 8080
+        compress: true
     },
     module: {
         loaders: [
@@ -21,12 +21,19 @@ module.exports = {
                     presets: ['es2015']
                 }
             }
-        ]
+        ],
+        rules: [{
+            test: /\.scss$/,
+            use: [
+                { loader: "style-loader" }, 
+                { loader: "css-loader" }, 
+                { loader: "sass-loader" }
+            ]
+        }]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'webpack todo',
-            template: 'index.html'
+            template: './index.html'
         })
     ]
 };
