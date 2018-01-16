@@ -7,5 +7,3 @@ export let todo = {
       completed: false
   }
 };
-
-export let todoListArray = [];
