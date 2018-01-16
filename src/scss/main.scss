@@ -1,0 +1,21 @@
+/**
+ |--------------------------------------------------------------------------
+ | File: main.scss
+ | @desc (Sassy css) main file
+ | @author Vuk Samardžić <samardzic.vuk@gmail.com>
+ |--------------------------------------------------------------------------
+ */
+ 
+
+/**
+  |--------------------------------------------------------------------------
+  | Components
+  |--------------------------------------------------------------------------
+  |
+  | Here is where you can register your components.
+  |
+ */
+
+  @import 'components/nav';
+  @import 'components/insert-task';
+  @import 'components/todo';
