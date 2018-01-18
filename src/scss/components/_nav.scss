@@ -4,6 +4,7 @@ nav
     {
         list-style-type: none;
         font-size: 0;
+        padding-left: 0;
     
         li
         {
@@ -21,7 +22,7 @@ nav
             color: rgb(170, 170, 170);
             border: 1px solid transparent;
             user-select: none;
-            transition: 0.3s all;
+            transition: 250ms all;
             
             &.active
             {

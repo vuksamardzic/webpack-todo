@@ -1,4 +1,9 @@
-@import 'variables';
+$icomoon-font-path: "../fonts" !default;
+
+$icon-star-empty: "\e9d7";
+$icon-star-full: "\e9d9";
+$icon-cross: "\ea0f";
+$icon-checkmark: "\ea10";
 
 @font-face {
   font-family: 'icomoon';
@@ -46,4 +51,3 @@
     content: $icon-checkmark;
   }
 }
-
