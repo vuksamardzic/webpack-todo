@@ -19,14 +19,14 @@ nav
             display: block;
             padding: 10px;            
             cursor: pointer;
-            color: #aaaaaa;
+            color: $todoGray;
             border: 1px solid transparent;
             user-select: none;
             transition: 250ms all;
             
             &.active
             {
-                border: 1px solid #aaaaaa;;
+                border: 1px solid $todoGray;
             }
         }
     }

@@ -10,26 +10,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    border: 1px solid #808080;
+    border: 1px solid $todoGray;
     border-bottom: 0;
 
     &:first-of-type
     {
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        border-top-left-radius: $todoBorderRadius;
+        border-top-right-radius: $todoBorderRadius;
     }
 
     &:last-of-type
     {
-        border-bottom: 1px solid #808080;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-bottom: 1px solid $todoGray;
+        border-bottom-left-radius: $todoBorderRadius;
+        border-bottom-right-radius: $todoBorderRadius;
     }
 
     .text
     {
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
+        font-weight: 300;
+        color: $todoGray;
         
         &.text-crossed
         {
