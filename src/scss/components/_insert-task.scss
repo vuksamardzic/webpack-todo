@@ -1,0 +1,27 @@
+form
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    input
+    {
+        width: 100%;
+        padding: 8px 5px;
+    }
+
+    button
+    {
+        background-color: transparent;
+        color: #aaaaaa;
+        outline: 0;
+        border: 1px solid #aaaaaa;
+        padding: 0 15px;
+        cursor: pointer;
+
+        &[type=reset]
+        {
+            margin: 0 8px;        
+        }
+    }
+}

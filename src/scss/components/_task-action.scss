@@ -1,0 +1,34 @@
+.todo-action
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > span
+    {
+        cursor: pointer;
+        margin-right: 5px;
+
+        &.icon-checkmark
+        {
+            color: green;
+        }
+
+        &.icon-star-full,
+        &.icon-star-empty,        
+        {
+            color: #ffd600;
+        }
+
+        &.icon-cross
+        {
+            font-size: 13px;
+            color: red;
+        }
+
+        &:last-child
+        {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.todo-task-list
+{
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+.todo-item
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid #808080;
+    border-bottom: 0;
+
+    &:first-of-type
+    {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    &:last-of-type
+    {
+        border-bottom: 1px solid #808080;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .text
+    {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        
+        &.text-crossed
+        {
+            text-decoration: line-through;
+        }
+    }
+}
