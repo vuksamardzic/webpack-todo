@@ -13,8 +13,7 @@ module.exports = {
         compress: true
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
@@ -23,29 +22,24 @@ module.exports = {
                 }
             },
             {
-                     test: /\.css$/,
-                     use: [
-                       'style-loader',
-                       'css-loader'
-                     ]
-                   },
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'sass-loader']
+                  })
+
+            },
             {
-            test: /\.scss$/,
-            use: [
-                { loader: "style-loader" }, 
-                { loader: "css-loader" }, 
-                { loader: "sass-loader" }
-            ]
-        },
-        {
-            test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-            exclude: /node_modules/,
-            loader: 'file-loader'        
-        }]
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+                exclude: /node_modules/,
+                loader: 'file-loader'
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html'
-        })
+        }),
+        new ExtractTextPlugin('main.css')
     ]
 };
