@@ -1,9 +1,15 @@
-export let todo = {
-  id: 0,
-  name: '',
-  props: {
-      active: true,
-      favourite: false,
-      completed: false
+import { idGenerator } from "../helpers/id-generator";
+
+export let todoModel = (name) => {
+  return {
+    id: idGenerator(),
+    name: name,
+    props: {
+        active: true,
+        favourite: false,
+        completed: false
+    }
   }
 };
+
+export let todoModelArray = [];
