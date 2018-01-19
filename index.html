@@ -1,32 +1,42 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
     <title>Webpack Todo</title>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a class="todo-nav active">Active</a></li>
-                <li><a class="todo-nav">Favourite</a></li>
-                <li><a class="todo-nav">Completed</a></li>
-            </ul>
-        </nav>
 
-        <form>
-            <input type="text" title="input-todo-name">
-            <button type="reset">Clear</button>
-            <button type="submit">Add</button>
-        </form>
-    </header>
-    <main>
-        <ul class="todo-task-list"></ul>
-    </main>
+<body>
+    <div class="app-wrapper">
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="todo-nav active">Active</a>
+                    </li>
+                    <li>
+                        <a class="todo-nav">Favourite</a>
+                    </li>
+                    <li>
+                        <a class="todo-nav">Completed</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <form>
+                <input type="text" title="input-todo-name">
+                <button type="reset">Clear</button>
+                <button type="submit">Add</button>
+            </form>
+        </header>
+        <main>
+            <ul class="todo-task-list"></ul>
+        </main>
+    </div>
 </body>
+
 </html>
