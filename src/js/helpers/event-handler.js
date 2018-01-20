@@ -4,23 +4,7 @@ import { navToggleActive } from '../helpers/nav-toggle'
 import { $nav, $primaryNav } from '../helpers/cached-dom'
 import { _render } from './render';
 
-export let navClickHandler = (ev) => {
-    navToggleActive(ev.target, $nav, 'active');
-};
-
-export let iconClickHandler = (ev) => {
-
-    const iconClass = ev.target.classList[0];
-    const uuid = ev.target.parentElement.attributes['uuid'].value;
-    let currentNav;
-
-    for ( let i of $nav ) {
-        if ( i.classList.contains('active') ) {
-            currentNav = i;
-            break;
-        }
-    }
-
+let iconTypeInnerHandler = (iconClass, currentNav, uuid) => {
     switch ( iconClass ) {
         case 'icon-checkmark':
             todoModelArray.map(i => i.id === uuid ? (i.props.completed = true, i.props.active = false, i.props.favourite = false) : i);
@@ -45,7 +29,26 @@ export let iconClickHandler = (ev) => {
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
     }
+}
 
+export let navClickHandler = (ev) => {
+    navToggleActive(ev.target, $nav, 'active');
+};
+
+export let iconClickHandler = (ev) => {
+
+    const iconClass = ev.target.classList[0];
+    const uuid = ev.target.parentElement.attributes['uuid'].value;
+    let currentNav;
+
+    for ( let i of $nav ) {
+        if ( i.classList.contains('active') ) {
+            currentNav = i;
+            break;
+        }
+    }
+
+    iconTypeInnerHandler(iconClass, currentNav, uuid);
 }
 
 export let formSubmitHandler = (ev) => {
