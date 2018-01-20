@@ -11,7 +11,7 @@ export let navClickHandler = (ev) => {
 export let iconClickHandler = (ev) => {
 
     const iconClass = ev.target.classList[0];
-    const todoId = parseInt(ev.target.parentElement.attributes['data-todo-id'].value);
+    const uuid = ev.target.parentElement.attributes['uuid'].value;
     let currentNav;
 
     for ( let i of $nav ) {
@@ -23,21 +23,25 @@ export let iconClickHandler = (ev) => {
 
     switch ( iconClass ) {
         case 'icon-checkmark':
-            todoModelArray.map(i => i.id === todoId ? (i.props.completed = true, i.props.active = false, i.props.favourite = false) : i);
+            todoModelArray.map(i => i.id === uuid ? (i.props.completed = true, i.props.active = false, i.props.favourite = false) : i);
+            localStorage.setItem('todo-app', JSON.stringify(todoModelArray));            
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
         case 'icon-star-empty':
-            todoModelArray.map(i => i.id === todoId ? i.props.favourite = true : i);
+            todoModelArray.map(i => i.id === uuid ? i.props.favourite = true : i);
+            localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
         case 'icon-star-full':
-            todoModelArray.map(i => i.id === todoId ? i.props.favourite = false : i);
+            todoModelArray.map(i => i.id === uuid ? i.props.favourite = false : i);
+            localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
         case 'icon-cross':
             let index;
-            todoModelArray.map((i, todoIndex) => i.id === todoId ? index = todoIndex : i);
+            todoModelArray.map((i, todoIndex) => i.id === uuid ? index = todoIndex : i);
             todoModelArray.splice(index, 1);
+            localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
     }
@@ -48,11 +52,12 @@ export let formSubmitHandler = (ev) => {
 
     ev.preventDefault();
 
-    for (let i of ev.target ) {
+    for ( let i of ev.target ) {
 
         if ( i.value !== '' && i.type === 'text' ) {
 
             todoModelArray.push(todoModel(i.value));
+            localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             i.value = '';
             navToggleActive($primaryNav ,$nav, 'active');
             break;
