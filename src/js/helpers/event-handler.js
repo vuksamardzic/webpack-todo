@@ -6,7 +6,7 @@ import { _render } from './render';
 
 let iconTypeInnerHandler = (iconClass, currentNav, uuid) => {
     switch ( iconClass ) {
-        case 'icon-checkmark':
+        case 'icon-check':
             todoModelArray.map(i => i.id === uuid ? (i.props.completed = true, i.props.active = false, i.props.favourite = false) : i);
             localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
@@ -16,12 +16,12 @@ let iconTypeInnerHandler = (iconClass, currentNav, uuid) => {
             localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
-        case 'icon-star-full':
+        case 'icon-star':
             todoModelArray.map(i => i.id === uuid ? i.props.favourite = false : i);
             localStorage.setItem('todo-app', JSON.stringify(todoModelArray));
             _render(todoModelArray.filter(i => i.props[currentNav.innerText.toLowerCase()]));
         break;
-        case 'icon-cross':
+        case 'icon-close':
             let index;
             todoModelArray.map((i, todoIndex) => i.id === uuid ? index = todoIndex : i);
             todoModelArray.splice(index, 1);
