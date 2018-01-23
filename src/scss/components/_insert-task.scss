@@ -7,14 +7,13 @@ form
     input
     {
         width: 100%;
-        padding: 8px 5px;
+        padding: 8px;
     }
 
     button
     {
         background-color: transparent;
         color: $todoGray;
-        outline: 0;
         border: 1px solid $todoGray;
         padding: 0 15px;
         cursor: pointer;
