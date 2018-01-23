@@ -12,4 +12,5 @@ for (let i of $nav ) {
 
 export let $primaryNav = temp;
 export let $form = document.querySelector('form');
+export let $input = $form[0];
 export let $todoTaskList = document.querySelector('.todo-task-list');
