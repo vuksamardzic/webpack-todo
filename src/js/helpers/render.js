@@ -7,13 +7,9 @@ export const _render = (filteredArray) => {
     const innerHTML = filteredArray ? filteredArray.map(i => todoTemplate(i)).join('') : todoModelArray.filter(i => i.props.active).map(i => todoTemplate(i)).join('');
     $todoTaskList.innerHTML = innerHTML;
 
-    for ( let todo of $todoTaskList.children ) {
-       for ( let todoAction of todo.children ) {
-            if ( todoAction.classList.contains('todo-action') ) {
-                for ( let icon of todoAction.children ) {
-                    icon.addEventListener('click', iconClickHandler);
-                }
-            }
-       }
+    for (let todo of $todoTaskList.children) {
+        for (let icon of todo.children[1].children) {
+            icon.addEventListener('click', iconClickHandler);
+        }
     }
 };
