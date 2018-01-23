@@ -3,6 +3,7 @@ import { todoTemplate } from '../templates/todo.template'
 import { navToggleActive } from '../helpers/nav-toggle'
 import { $nav, $primaryNav } from '../helpers/cached-dom'
 import { _render } from './render';
+import { interval } from './interval';
 
 let iconTypeInnerHandler = (iconClass, currentNav, uuid) => {
     switch ( iconClass ) {
@@ -64,4 +65,11 @@ export let formSubmitHandler = (ev) => {
             break;
         }
     }
+}
+
+export let inputFocusHandler = (ev) => {
+    clearInterval(interval);
+    
+    ev.target.value = '';    
+    ev.target.removeEventListener('focus', inputFocusHandler);
 }
