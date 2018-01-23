@@ -1,6 +1,6 @@
 import '../scss/main.scss'
-import { navClickHandler, formSubmitHandler } from './helpers/event-handler'
-import { $nav, $form } from './helpers/cached-dom'
+import { navClickHandler, formSubmitHandler, inputFocusHandler } from './helpers/event-handler'
+import { $nav, $form, $input } from './helpers/cached-dom'
 import { localStorageLoader } from './helpers/local-storage-loader';
 
 for ( let i of $nav ) {
@@ -10,3 +10,4 @@ for ( let i of $nav ) {
 localStorageLoader();
 
 $form.addEventListener('submit', formSubmitHandler);
+$input.addEventListener('focus', inputFocusHandler);
