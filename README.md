@@ -1,2 +1,2 @@
 # webpack-todo
-Simple app using webpack for development :wrench:
+Todo app made w/ webpack :wrench:
